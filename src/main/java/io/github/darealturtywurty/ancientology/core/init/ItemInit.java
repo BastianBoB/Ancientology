@@ -2,6 +2,7 @@ package io.github.darealturtywurty.ancientology.core.init;
 
 import io.github.darealturtywurty.ancientology.Ancientology;
 import io.github.darealturtywurty.ancientology.common.items.ForbiddenFruitItem;
+import io.github.darealturtywurty.ancientology.common.items.ZeusLightningItem;
 import io.github.darealturtywurty.ancientology.core.materials.ArmorMaterials;
 import io.github.darealturtywurty.ancientology.core.materials.ToolMaterials;
 import net.minecraft.resources.ResourceLocation;
@@ -31,6 +32,9 @@ public final class ItemInit {
     public static final RegistryObject<ForbiddenFruitItem> FORBIDDEN_FRUIT = ITEMS.register("forbidden_fruit",
             () -> new ForbiddenFruitItem(
                     defaultProperties().fireResistant().food(ForbiddenFruitItem.FOOD).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<ZeusLightningItem> ZEUS_LIGHTNING = ITEMS.register("zeus_lightning",
+            () -> new ZeusLightningItem(defaultProperties().fireResistant().rarity(Rarity.RARE)));
 
     /*
      * public static final RegistryObject<ForbiddenFruitItem> FORBIDDEN_FRUIT =

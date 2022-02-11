@@ -2,12 +2,16 @@ package io.github.darealturtywurty.ancientology.client.util;
 
 import io.github.darealturtywurty.ancientology.Ancientology;
 import io.github.darealturtywurty.ancientology.client.render.renderers.JumprasherBER;
+import io.github.darealturtywurty.ancientology.common.particles.AshVelocityParticle;
 import io.github.darealturtywurty.ancientology.core.init.BlockEntityInit;
 import io.github.darealturtywurty.ancientology.core.init.BlockInit;
+import io.github.darealturtywurty.ancientology.core.init.ParticleInit;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent.RegisterRenderers;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
@@ -41,6 +45,11 @@ public final class ClientEvents {
         @SubscribeEvent
         public static void registerRenderers(final RegisterRenderers event) {
             event.registerBlockEntityRenderer(BlockEntityInit.JUMPRASHER.get(), JumprasherBER::new);
+        }
+
+        @SubscribeEvent
+        public static void particleFactoryRegisterEvent(ParticleFactoryRegisterEvent event){
+            Minecraft.getInstance().particleEngine.register(ParticleInit.ASH_VELOCITY_PARTICLE.get(), AshVelocityParticle.Provider::new);
         }
     }
 }

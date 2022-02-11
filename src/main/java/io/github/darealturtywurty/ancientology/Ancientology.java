@@ -1,11 +1,6 @@
 package io.github.darealturtywurty.ancientology;
 
-import io.github.darealturtywurty.ancientology.core.init.BlockEntityInit;
-import io.github.darealturtywurty.ancientology.core.init.BlockInit;
-import io.github.darealturtywurty.ancientology.core.init.EntityInit;
-import io.github.darealturtywurty.ancientology.core.init.ItemInit;
-import io.github.darealturtywurty.ancientology.core.init.MobEffectInit;
-import io.github.darealturtywurty.ancientology.core.init.RecipeInit;
+import io.github.darealturtywurty.ancientology.core.init.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -40,6 +35,7 @@ public class Ancientology {
         RecipeInit.RECIPES.register(bus);
         EntityInit.ENTITIES.register(bus);
         MobEffectInit.MOB_EFFECTS.register(bus);
+        ParticleInit.PARTICLE_TYPES.register(bus);
     }
 
     public static ResourceLocation rl(final String name) {
